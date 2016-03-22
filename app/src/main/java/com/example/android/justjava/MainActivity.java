@@ -23,8 +23,8 @@ public class MainActivity extends ActionBarActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-
-        displayPrice(quantity * 5);
+        String  priceMessage = "Amount due $" + quantity * 5;
+        displayMessage(priceMessage);
     }
     /**
      * This method displays the given price on the screen.
@@ -52,5 +52,12 @@ public class MainActivity extends ActionBarActivity {
 
         quantity = quantity - 1;
         display(quantity);
+    }
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 }
