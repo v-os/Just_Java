@@ -12,6 +12,7 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends ActionBarActivity {
     int quantity = 2;
+    String priceMessage = "Total = $";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +24,10 @@ public class MainActivity extends ActionBarActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        String  priceMessage = "Total = $" + quantity * 5;
+        priceMessage = priceMessage + quantity * 5 + "\n Thank you!";
         displayMessage(priceMessage);
     }
+
     /**
      * This method displays the given price on the screen.
      */
@@ -45,14 +47,18 @@ public class MainActivity extends ActionBarActivity {
 
     public void increment(View view) {
 
-        quantity = quantity  + 1;
+        quantity = quantity + 1;
         display(quantity);
+        displayMessage(priceMessage + quantity * 5);
     }
+
     public void decrement(View view) {
 
         quantity = quantity - 1;
         display(quantity);
+        displayMessage(priceMessage + quantity * 5);
     }
+
     /**
      * This method displays the given text on the screen.
      */
